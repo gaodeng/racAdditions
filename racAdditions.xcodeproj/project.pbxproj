@@ -3,24 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0284A6881D41EA7200056E24 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B29D801D24649500E2D02C /* Result.framework */; };
-		0287166B1D6D21970076FFBD /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0287166A1D6D21970076FFBD /* ReactiveSwift.framework */; };
 		02B29D631D24640700E2D02C /* racAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B29D621D24640700E2D02C /* racAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02B29D7A1D24641B00E2D02C /* racAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B29D791D24641B00E2D02C /* racAdditions.swift */; };
+		647F5C24272E288800CB9B57 /* ReactiveSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647F5C23272E288800CB9B57 /* ReactiveSwift.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0287166A1D6D21970076FFBD /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		02B29D5F1D24640700E2D02C /* racAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = racAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B29D621D24640700E2D02C /* racAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = racAdditions.h; sourceTree = "<group>"; };
 		02B29D641D24640700E2D02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02B29D791D24641B00E2D02C /* racAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = racAdditions.swift; sourceTree = "<group>"; };
 		02B29D7B1D24643500E2D02C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		02B29D801D24649500E2D02C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		647F5C23272E288800CB9B57 /* ReactiveSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReactiveSwift.xcframework; path = Carthage/Build/ReactiveSwift.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0287166B1D6D21970076FFBD /* ReactiveSwift.framework in Frameworks */,
+				647F5C24272E288800CB9B57 /* ReactiveSwift.xcframework in Frameworks */,
 				0284A6881D41EA7200056E24 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,7 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				02B29D801D24649500E2D02C /* Result.framework */,
-				0287166A1D6D21970076FFBD /* ReactiveSwift.framework */,
+				647F5C23272E288800CB9B57 /* ReactiveSwift.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,6 +126,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 02B29D551D24640700E2D02C;
@@ -262,7 +263,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -285,7 +287,11 @@
 				);
 				INFOPLIST_FILE = racAdditions/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hollylabs.racAdditions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -310,7 +316,11 @@
 				);
 				INFOPLIST_FILE = racAdditions/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hollylabs.racAdditions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
